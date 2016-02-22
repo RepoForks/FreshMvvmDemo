@@ -86,12 +86,20 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <None Include="GettingStarted.Xamarin" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="FreshIOC, Version=1.0.5718.18117, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreshMvvm.0.0.6\lib\FreshIOC.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FreshMvvm, Version=1.0.5718.18118, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreshMvvm.0.0.6\lib\FreshMvvm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />

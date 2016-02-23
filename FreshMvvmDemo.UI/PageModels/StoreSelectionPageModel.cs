@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FreshMvvm;
+﻿using FreshMvvm;
 
-namespace FreshMvvmDemo.UI
+namespace FreshMvvmDemo.UI.PageModels
 {
     public class StoreSelectionPageModel : FreshBasePageModel
     {

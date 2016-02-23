@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace FreshMvvmDemo.UI
+namespace FreshMvvmDemo.UI.Pages
 {
-    public partial class LoginPage : ContentPage
+    public partial class StoreDetailsPage : ContentPage
     {
-        public LoginPage()
+        public StoreDetailsPage()
         {
             InitializeComponent();
         }

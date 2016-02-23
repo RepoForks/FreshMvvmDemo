@@ -108,5 +108,15 @@
   <ItemGroup>
     <Content Include="Entitlements.plist" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FreshMvvmDemo.Common\FreshMvvmDemo.Common.csproj">
+      <Project>{E75A9F47-207A-4D75-91D2-F5E5F57BD462}</Project>
+      <Name>FreshMvvmDemo.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreshMvvmDemo.DummyServiceClient\FreshMvvmDemo.DummyServiceClient.csproj">
+      <Project>{79559999-905F-45DA-AB7F-D8BDC20CEB2D}</Project>
+      <Name>FreshMvvmDemo.DummyServiceClient</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Entitlements.plist" />
+    <BundleResource Include="Resources\cart.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FreshMvvmDemo.UI\FreshMvvmDemo.UI.csproj">

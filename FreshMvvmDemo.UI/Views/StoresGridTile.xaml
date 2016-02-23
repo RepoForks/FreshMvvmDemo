@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:FreshMvvmDemo.Common.Models;assembly=FreshMvvmDemo.Common"
+             x:Class="FreshMvvmDemo.UI.Views.StoresGridTile">
+  <ContentView.BindingContext>
+    <models:Store />
+  </ContentView.BindingContext>
+
+  <ContentView.GestureRecognizers>
+    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
+  </ContentView.GestureRecognizers>
+  
+  <StackLayout Orientation="Vertical">
+    <StackLayout Orientation="Horizontal">
+      <Image Source="cart.png" Height="20"></Image>
+      <Label Text="{Binding Name}" HorizontalOptions="Center" FontSize="20"/>
+    </StackLayout>
+    <StackLayout Orientation="Horizontal">
+      <Label Text="Location: " FontSize="12"></Label>
+      <Label Text="{Binding Location}" FontSize="12"></Label>
+    </StackLayout>
+  </StackLayout>
+</ContentView>

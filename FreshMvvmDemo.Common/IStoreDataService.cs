@@ -10,7 +10,7 @@ namespace FreshMvvmDemo.Common
 {
     public interface IStoreDataService
     {
-        Store[] GetStores();
-        Product[] GetProducts(Guid storeId);
+        Task<Store[]> GetStores();
+        Task<Product[]> GetProducts(Guid storeId);
     }
 }

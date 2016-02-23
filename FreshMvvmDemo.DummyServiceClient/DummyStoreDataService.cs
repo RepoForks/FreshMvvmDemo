@@ -10,8 +10,11 @@ namespace FreshMvvmDemo.DummyServiceClient
 {
     public class DummyStoreDataService : IStoreDataService
     {
-        public Store[] GetStores()
+        public async Task<Store[]> GetStores()
         {
+            // Simulate server call
+            await Task.Delay(1000);
+
             return new[]
             {
                 new Store
@@ -31,8 +34,11 @@ namespace FreshMvvmDemo.DummyServiceClient
             };
         }
 
-        public Product[] GetProducts(Guid storeId)
+        public async Task<Product[]> GetProducts(Guid storeId)
         {
+            // Simulate server call
+            await Task.Delay(1000);
+
             return new[]
             {
                 new Product

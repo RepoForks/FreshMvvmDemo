@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreshMvvmDemo.UI.iOS", "FreshMvvmDemo.UI.iOS\FreshMvvmDemo.UI.iOS.csproj", "{E39BB6B5-6D6C-443A-8AB9-32AC25E2092A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreshMvvmDemo.iOS", "FreshMvvmDemo.UI.iOS\FreshMvvmDemo.iOS.csproj", "{E39BB6B5-6D6C-443A-8AB9-32AC25E2092A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreshMvvmDemo.UI", "FreshMvvmDemo.UI\FreshMvvmDemo.UI.csproj", "{CF4BF504-B252-406A-B3E7-0F8CF8972DD9}"
 EndProject

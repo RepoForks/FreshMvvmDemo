@@ -2,9 +2,33 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:pageModels="clr-namespace:FreshMvvmDemo.UI.PageModels;assembly=FreshMvvmDemo.UI"
-             x:Class="FreshMvvmDemo.UI.Pages.StoreDetailsPage">
+             x:Class="FreshMvvmDemo.UI.Pages.StoreDetailsPage"
+             Padding="20">
   <ContentPage.BindingContext>
     <pageModels:StoreDetailsPageModel />
   </ContentPage.BindingContext>
 
+  <StackLayout Orientation="Vertical">
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <Grid.Children>
+        <Label Text="Name" FontAttributes="Bold" FontSize="20" Grid.Row="1" Grid.Column="1"/>
+        <Label Text="{Binding Store.Name}" FontSize="20" Grid.Row="1" Grid.Column="2"/>
+        <Label Text="Location" FontAttributes="Bold" FontSize="20" Grid.Row="2" Grid.Column="1"/>
+        <Label Text="{Binding Store.Location}" FontSize="20" Grid.Row="2" Grid.Column="2"/>
+        <Label Text="Employees" FontAttributes="Bold" FontSize="20" Grid.Row="3" Grid.Column="1"/>
+        <Label Text="{Binding Store.Employees}" FontSize="20" Grid.Row="3" Grid.Column="2"/>
+      </Grid.Children>
+    </Grid>
+    
+    <Label Text="Products" FontAttributes="Bold" FontSize="20"/>
+  </StackLayout>
 </ContentPage>

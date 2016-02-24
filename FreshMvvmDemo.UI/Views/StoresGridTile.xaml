@@ -10,15 +10,22 @@
   <ContentView.GestureRecognizers>
     <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
   </ContentView.GestureRecognizers>
+
+  <ContentView.Padding><Thickness>10</Thickness></ContentView.Padding>
   
   <StackLayout Orientation="Vertical">
+    <StackLayout.Padding><Thickness>5</Thickness></StackLayout.Padding>
+    <StackLayout.BackgroundColor>
+      <Color>#999999</Color>
+    </StackLayout.BackgroundColor>
+    
     <StackLayout Orientation="Horizontal">
-      <Image Source="cart.png" Height="20"></Image>
-      <Label Text="{Binding Name}" HorizontalOptions="Center" FontSize="20"/>
+      <Image Source="cart.png" HeightRequest="36"></Image>
+      <Label Text="{Binding Name}" HorizontalOptions="Center" FontSize="36"/>
     </StackLayout>
     <StackLayout Orientation="Horizontal">
-      <Label Text="Location: " FontSize="12"></Label>
-      <Label Text="{Binding Location}" FontSize="12"></Label>
+      <Label Text="Location: " FontSize="24"></Label>
+      <Label Text="{Binding Location}" FontSize="24"></Label>
     </StackLayout>
   </StackLayout>
 </ContentView>

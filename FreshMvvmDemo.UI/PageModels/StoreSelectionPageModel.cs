@@ -33,7 +33,7 @@ namespace FreshMvvmDemo.UI.PageModels
 
         public Store[] Stores { get; private set; }
 
-        public readonly ICommand RefreshCommand;
+        public ICommand RefreshCommand { get; private set; }
 
         private async void LoadStores()
         {

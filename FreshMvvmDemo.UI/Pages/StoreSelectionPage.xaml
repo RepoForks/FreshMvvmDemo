@@ -3,15 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:pageModels="clr-namespace:FreshMvvmDemo.UI.PageModels;assembly=FreshMvvmDemo.UI"
              xmlns:views="clr-namespace:FreshMvvmDemo.UI.Views;assembly=FreshMvvmDemo.UI"
-             x:Class="FreshMvvmDemo.UI.Pages.StoreSelectionPage">
+             x:Class="FreshMvvmDemo.UI.Pages.StoreSelectionPage"
+             Title="Stores">
   <ContentPage.BindingContext>
     <pageModels:StoreSelectionPageModel />
   </ContentPage.BindingContext>
 
   <StackLayout Orientation="Vertical">
-    <StackLayout Orientation="Horizontal">
-      <Label HorizontalOptions="Center" FontSize="20">Stores</Label>
-      <ActivityIndicator IsEnabled="True" IsRunning="True" IsVisible="{Binding StoresLoading}"/>
+    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+      <Button Text="Refresh" Command="{Binding RefreshCommand}" IsEnabled="{Binding NotLoading}" HeightRequest="36" FontSize="24"/>
+      <ActivityIndicator IsEnabled="True" IsRunning="{Binding Loading}" IsVisible="True"/>
     </StackLayout>
     
     <views:StoresGrid Stores="{Binding Stores}"/>

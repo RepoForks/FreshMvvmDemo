@@ -30,6 +30,20 @@ namespace FreshMvvmDemo.DummyServiceClient
                     Name = "Test Store 2",
                     Location = "Milwaukee",
                     Employees = 84,
+                },
+                new Store
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Test Store 3",
+                    Location = "Detroit",
+                    Employees = 112,
+                },
+                new Store
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Test Store 4",
+                    Location = "St. Louis",
+                    Employees = 68,
                 }
             };
         }

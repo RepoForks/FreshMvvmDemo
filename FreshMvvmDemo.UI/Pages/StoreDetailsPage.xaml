@@ -4,6 +4,7 @@
              xmlns:pageModels="clr-namespace:FreshMvvmDemo.UI.PageModels;assembly=FreshMvvmDemo.UI"
              xmlns:views="clr-namespace:FreshMvvmDemo.UI.Views;assembly=FreshMvvmDemo.UI"
              x:Class="FreshMvvmDemo.UI.Pages.StoreDetailsPage"
+             Title="{Binding Store.Name}"
              Padding="20">
   <ContentPage.BindingContext>
     <pageModels:StoreDetailsPageModel />

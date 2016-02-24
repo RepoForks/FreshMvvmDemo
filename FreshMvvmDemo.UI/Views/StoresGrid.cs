@@ -32,9 +32,11 @@ namespace FreshMvvmDemo.UI.Views
 
         public static readonly BindableProperty StoresProperty =
             BindableProperty.Create<StoresGrid, IEnumerable<Store>>(
-                x => x.Stores, null, BindingMode.OneWay, propertyChanging: StoresPropertyChanging);
+                x => x.Stores, null, BindingMode.OneWay, 
+                propertyChanged: StoresPropertyChanged);
 
-        private static void StoresPropertyChanging(BindableObject bindable, IEnumerable<Store> oldvalue, IEnumerable<Store> newvalue)
+        private static void StoresPropertyChanged(BindableObject bindable, 
+            IEnumerable<Store> oldvalue, IEnumerable<Store> newvalue)
         {
             ((StoresGrid)bindable).UpdateChildren();
         }
@@ -52,9 +54,10 @@ namespace FreshMvvmDemo.UI.Views
         public static readonly BindableProperty StoreSelectedCommandProperty =
             BindableProperty.Create<StoresGrid, ICommand>(
                 x => x.StoreSelectedCommand, null, BindingMode.OneWay,
-                propertyChanging: StoreSelectedCommandPropertyChanging);
+                propertyChanged: StoreSelectedCommandPropertyChanged);
 
-        private static void StoreSelectedCommandPropertyChanging(BindableObject bindable, ICommand oldValue, ICommand newValue)
+        private static void StoreSelectedCommandPropertyChanged(BindableObject bindable, 
+            ICommand oldValue, ICommand newValue)
         {
             ((StoresGrid)bindable).UpdateChildren();
         }

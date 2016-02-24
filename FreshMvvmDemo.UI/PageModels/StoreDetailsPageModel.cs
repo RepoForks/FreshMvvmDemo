@@ -4,9 +4,11 @@ using System.Threading.Tasks;
 using FreshMvvm;
 using FreshMvvmDemo.Common;
 using FreshMvvmDemo.Common.Models;
+using PropertyChanged;
 
 namespace FreshMvvmDemo.UI.PageModels
 {
+    [ImplementPropertyChanged]
     public class StoreDetailsPageModel : FreshBasePageModel
     {
         public StoreDetailsPageModel()

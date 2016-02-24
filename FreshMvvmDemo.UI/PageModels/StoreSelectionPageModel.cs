@@ -1,17 +1,22 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using FreshMvvm;
 using FreshMvvmDemo.Common;
 using FreshMvvmDemo.Common.Models;
+using PropertyChanged;
+using Xamarin.Forms;
 
 namespace FreshMvvmDemo.UI.PageModels
 {
+    [ImplementPropertyChanged]
     public class StoreSelectionPageModel : FreshBasePageModel
     {
         public StoreSelectionPageModel()
         {
             _storeDataService = FreshIOC.Container.Resolve<IStoreDataService>();
+            RefreshCommand = new Command(LoadStores);
         }
 
         private readonly IStoreDataService _storeDataService;
@@ -23,26 +28,25 @@ namespace FreshMvvmDemo.UI.PageModels
             base.Init(initData);
         }
 
-        private readonly SemaphoreSlim _storesLoadingLock = new SemaphoreSlim(1);
-        public bool StoresLoading { get; private set; }
+        public bool Loading { get; private set; }
+        public bool NotLoading { get { return !Loading; } }
+
         public Store[] Stores { get; private set; }
+
+        public readonly ICommand RefreshCommand;
 
         private async void LoadStores()
         {
-            if (!_storesLoadingLock.Wait(0))
-                return;
-
             try
             {
-                StoresLoading = true;
+                Loading = true;
 
                 var stores = await _storeDataService.GetStores();
                 Stores = stores;
             }
             finally
             {
-                StoresLoading = false;
-                _storesLoadingLock.Release();
+                Loading = false;
             }
         }
     }

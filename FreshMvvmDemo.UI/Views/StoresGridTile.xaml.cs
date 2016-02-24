@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using FreshMvvmDemo.Common.Models;
 using Xamarin.Forms;
 
@@ -10,19 +11,23 @@ namespace FreshMvvmDemo.UI.Views
 {
     public partial class StoresGridTile : ContentView
     {
-        public StoresGridTile(Store store)
+        public StoresGridTile(Store store, ICommand storeSelectedCommand)
         {
             InitializeComponent();
 
             Store = store;
-            BindingContext = store;
+            StoreSelectedCommand = storeSelectedCommand;
+
+            BindingContext = Store;
         }
 
         private Store Store { get; set; }
 
+        private ICommand StoreSelectedCommand { get; set; }
+
         private void TapGestureRecognizer_OnTapped(object sender, EventArgs e)
         {
-            // TODO: Send event back to page model
+            StoreSelectedCommand.Execute(Store);
         }
     }
 }

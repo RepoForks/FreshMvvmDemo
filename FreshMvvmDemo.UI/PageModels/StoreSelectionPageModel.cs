@@ -15,15 +15,19 @@ namespace FreshMvvmDemo.UI.PageModels
     {
         public StoreSelectionPageModel()
         {
+            Stores = new Store[0];
+
             _storeDataService = FreshIOC.Container.Resolve<IStoreDataService>();
-            RefreshCommand = new Command(LoadStores);
+
+            RefreshCommand = new Command(Refresh);
+            StoreSelectedCommand = new Command<Store>(StoreSelected);
         }
 
         private readonly IStoreDataService _storeDataService;
 
-        public override void Init(object initData)
+        public override async void Init(object initData)
         {
-            LoadStores();
+            await LoadStores();
 
             base.Init(initData);
         }
@@ -34,8 +38,18 @@ namespace FreshMvvmDemo.UI.PageModels
         public Store[] Stores { get; private set; }
 
         public ICommand RefreshCommand { get; private set; }
+        private async void Refresh()
+        {
+            await LoadStores();
+        }
 
-        private async void LoadStores()
+        public ICommand StoreSelectedCommand { get; private set; }
+        private async void StoreSelected(Store store)
+        {
+            await CoreMethods.PushPageModel<StoreDetailsPageModel>(store);
+        }
+
+        private async Task LoadStores()
         {
             try
             {
@@ -49,5 +63,6 @@ namespace FreshMvvmDemo.UI.PageModels
                 Loading = false;
             }
         }
+
     }
 }

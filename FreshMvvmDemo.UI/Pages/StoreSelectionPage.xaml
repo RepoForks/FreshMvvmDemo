@@ -15,6 +15,8 @@
       <ActivityIndicator IsEnabled="True" IsRunning="{Binding Loading}" IsVisible="True"/>
     </StackLayout>
     
-    <views:StoresGrid Stores="{Binding Stores}"/>
+    <views:StoresGrid 
+      Stores="{Binding Stores}" 
+      StoreSelectedCommand="{Binding StoreSelectedCommand}"/>
   </StackLayout>
 </ContentPage>
